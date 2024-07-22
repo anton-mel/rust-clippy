@@ -383,6 +383,7 @@ mod useless_conversion;
 mod vec;
 mod vec_init_then_push;
 mod visibility;
+mod whitelist_mutation;
 mod wildcard_imports;
 mod write;
 mod zero_div_zero;
@@ -910,6 +911,7 @@ pub fn register_lints(store: &mut rustc_lint::LintStore, conf: &'static Conf) {
     store.register_late_pass(|_| Box::new(set_contains_or_insert::HashsetInsertAfterContains));
     store.register_early_pass(|| Box::new(byte_char_slices::ByteCharSlice));
     store.register_early_pass(|| Box::new(cfg_not_test::CfgNotTest));
+    store.register_late_pass(|_| Box::new(whitelist_mutation::FieldsMutatedByWhitelist::new()));
     // add lints here, do not remove this comment, it's used in `new_lint`
 }
 

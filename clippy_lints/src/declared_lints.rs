@@ -755,6 +755,7 @@ pub(crate) static LINTS: &[&crate::LintInfo] = &[
     crate::visibility::NEEDLESS_PUB_SELF_INFO,
     crate::visibility::PUB_WITHOUT_SHORTHAND_INFO,
     crate::visibility::PUB_WITH_SHORTHAND_INFO,
+    crate::whitelist_mutation::FIELDS_MUTATED_BY_WHITELIST_INFO,
     crate::wildcard_imports::ENUM_GLOB_USE_INFO,
     crate::wildcard_imports::WILDCARD_IMPORTS_INFO,
     crate::write::PRINTLN_EMPTY_STRING_INFO,
